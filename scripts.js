@@ -53,7 +53,7 @@ function onReady() {
     $('#theButton').on('click', whenIClickTheButton);
 }
 
-function whenIClickTheButton(){
+function whenIClickTheButton(){ // these things only happen on button click
     console.log('someone clicked me!');
     $('li').last().remove();
 

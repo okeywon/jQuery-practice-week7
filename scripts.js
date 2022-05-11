@@ -1,6 +1,21 @@
 console.log('JS');
 
+//COPY AND PASTE ALL SELECTORS / IDs / CLASSES so you don't typo!
+
 // DOM = Document Object Model
+// 1 Selectors - element to pass into an element, etc.
+// 2 Traversal - in an element, how to get to it's parent, etc.
+// 3 DOM Manipulation - have an element and want to do something with it,  or add more to DOM, etc.
+// 4 Events - I clicked a button and want it to do something now, etc.
+
+// classes and ids can be created inside either index.html or scripts.js
+//   ---- both can be accessed by the DOM ----
+
+// may need .addClass function
+// may need prepend
+// may need animations
+// will need traversing --- I'm guessing from Edan's lengthy explanation
+// NO AJAX YET!
 
 $(document).ready(onReady);
 
@@ -11,4 +26,30 @@ function onReady() {
     // let titleHeader = <h1></h1>
     console.log('titleheader is:', titleHeader); //ALWAYS LOG THESE - helpful for debugging.
     // console.log the h1 'titleheader'
+
+    let allListItems = $('li');
+    console.log('li elements', allListItems);
+
+    let justThatOneListItem = $('#maddam-li-element');
+    justThatOneListItem
+        .text('DOM Manipulation')
+        .css('font-weight', 'bold')
+        .css('transform', 'rotate(-45deg)');
+
+    $('.first-and-last').css('color', 'blue');
+
+    $('.every-Other').css('background-color', 'pink');
+
+    $('ul').append(`'
+        <li>
+            Forms
+            <button class="alienButton">Alien</button>
+        </li>'`);
+
+    $('#theButton').on('click', whenIClickTheButton);
+}
+
+function whenIClickTheButton(){
+    console.log('someone clicked me!');
+    $('li').last().remove();
 }

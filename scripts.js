@@ -17,6 +17,10 @@ console.log('JS');
 // will need traversing --- I'm guessing from Edan's lengthy explanation
 // NO AJAX YET!
 
+// .val gets things from the DOM
+
+// can use jquery to get the value of an element --- looks important
+
 $(document).ready(onReady);
 
 function onReady() {
@@ -52,4 +56,10 @@ function onReady() {
 function whenIClickTheButton(){
     console.log('someone clicked me!');
     $('li').last().remove();
+
+    let titleText = $('h1').text();  // text here is a getter
+    console.log('Title Text is:', titleText);
+
+    let louderTitleText = titleText.toUpperCase();
+    $('h1').text(louderTitleText);   // text here is a setter
 }
